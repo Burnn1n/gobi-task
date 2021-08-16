@@ -6,17 +6,16 @@ import {
   HttpLink,
   from,
 } from "@apollo/client";
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { onError } from "@apollo/client/link/error";
-import GetUsers from "./components/GetUsers";
-//import Form from "./Components/Form";
+import Products from "./pages/Product/index";
+import { authProtectedRoutes, publicRoutes } from './routes/index';
+import AppRoute from "./routes/route";
+import VerticalLayout from './components/VerticalLayout';
 
-const errorLink = onError(({ graphqlErrors, networkError }) => {
-  if (graphqlErrors) {
-    graphqlErrors.map(({ message, location, path }) => {
-      alert(`Graphql error ${message}`);
-    });
-  }
-});
+const Layout = VerticalLayout;
+
 const shop = "https://tough-one-store.myshopify.com/api/2021-07/graphql.json";
 const token = "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";
 const token1 = "7545a37426037781068f8066f1190342";
@@ -34,10 +33,23 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      {" "}
-       <GetUsers />
+    <React.Fragment>
+      <Router>
+      <ApolloProvider client={client}>
+       {authProtectedRoutes.map((route, idx) => (
+              <AppRoute
+                path={route.path}
+                layout={Layout}
+                component={route.component}
+                key={idx}
+                //isAuthProtected={true}
+                exact
+              />
+            ))}
     </ApolloProvider>
+      </Router>
+    </React.Fragment>
+    
   );
 }
 
