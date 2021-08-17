@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useQuery } from "@apollo/client";
 import { product } from "../../components/graphql/query";
 import {
@@ -8,22 +8,20 @@ import {
 } from 'reactstrap';
 import './product.css'
 import { valueToObjectRepresentation } from "@apollo/client/utilities";
+import { CartDispatchContext, addToCart } from "../../contexts/cart";
 function Product({match}) {
 	const handle = match.params.handle;
   const { error, loading, data } = useQuery(product,{
 		variables : {handle}
 	});
-	const [state, setState] = useState({
-		colorChecked: "",
-		sizeChecked: "",
-		materialChecked: ""
-  });
+	const [colorChecked, setColorChecked] = useState("");
+	const [sizeChecked, setSizeChecked] = useState("");
+	const [materialChecked, setMaterialChecked] = useState("");
 	const [productData, setProductData] = useState({});
 	const [color, setColor]=useState([]);
 	const [size, setSize] = useState([]);
 	const [material, setMaterial] = useState([]);
 	const [variants, setVariants] = useState([]);
-	const [variantPrice, setVariantPrice] = useState(0);
   useEffect(() => {
     if (data) {
 				setProductData(data.productByHandle)
@@ -43,8 +41,116 @@ function Product({match}) {
 				setVariants(productData.variants?.edges);
   }, [productData]);
 	useEffect(() => {
-		setState({colorChecked: color[0],sizeChecked: size[0], materialChecked: material[0]})
+		setColorChecked(color[0]);
+		setMaterialChecked(material[0]);
+		setSizeChecked(size[0]);
 	}, [size,color,material]);
+	const handleSizeChange = (e) => {
+		setSizeChecked(e.currentTarget.value);
+	}
+	const handleColorChange = (e) => {
+		setColorChecked(e.currentTarget.value);
+	}
+	const handleMaterialChange = (e) => {
+		setMaterialChecked(e.currentTarget.value);
+	}
+	//cart
+	const dispatch = useContext(CartDispatchContext);
+
+	const handleAddToCart = () => {
+
+		//options
+		var variantQuantity;
+		var variantPrice;
+		var isVariant = false;
+		if(materialChecked === undefined && sizeChecked === undefined && colorChecked === undefined){
+		}
+		else{
+			let valueArr = [sizeChecked, colorChecked, materialChecked];
+			for (let index = 0; index < valueArr.length; index++) {
+				if(valueArr[index] === undefined){
+					valueArr.splice(index,1);
+					index--;
+				}
+			}
+			variants.map((val)=>{
+				let arr = val.node.title.split(" / ");
+				if(JSON.stringify(valueArr) === JSON.stringify(arr)){
+					isVariant = true;
+					variantQuantity = val.node.quantityAvailable;
+					variantPrice = val.node.priceV2.amount;
+				}
+			})
+		}
+		console.log(isVariant);
+		//
+		let cartOption = {};
+		if(JSON.stringify(material) === JSON.stringify([])){
+			if(JSON.stringify(color) === JSON.stringify([])){
+				if(JSON.stringify(size) === JSON.stringify([])){
+					cartOption = null;
+				}
+				//only size
+				else{
+					cartOption = {quantity: variantQuantity,price: variantPrice, size: sizeChecked}
+				}
+			}
+			else{
+				//only color
+				if(size === JSON.stringify([])){
+					cartOption = {quantity: variantQuantity,price: variantPrice, color: colorChecked};
+				}
+				//only color and size
+				else{
+					cartOption = {quantity: variantQuantity,price: variantPrice, size: sizeChecked, color: colorChecked}
+				}
+			}
+		}
+		else{
+			if(JSON.stringify(color) === JSON.stringify([])){
+				// only material
+				if(JSON.stringify(size) === JSON.stringify([])){
+					cartOption = {quantity: variantQuantity,price: variantPrice, material: materialChecked};
+				}
+				// material size
+				else{
+					cartOption = {quantity: variantQuantity,price: variantPrice, size: sizeChecked, material: materialChecked}
+				}
+			}
+			else{
+				//material color
+				if(JSON.stringify(size) === JSON.stringify([])){
+					console.log("too ni ",variants[0].node.quantityAvailable);
+					cartOption = {quantity: variantQuantity,price: variantPrice, 
+						color: colorChecked, material: materialChecked};
+				}
+				//material color size
+				else{
+					cartOption = {quantity: variantQuantity,price: variantPrice, 
+						size: sizeChecked, color: colorChecked, material: materialChecked}
+				}
+			}
+		}
+		console.log(cartOption);
+    const product = { ...data.productByHandle, quantity: 1 };
+		if(isVariant){
+			
+			alert("Амжилттай сагсанд нэмэгдлээ");
+			addToCart(dispatch, data.productByHandle, cartOption);
+			console.log("Ywuulah data ",data.productByHandle);
+			
+		}
+		else{
+			if(cartOption === null){
+				alert("Амжилттай сагсанд нэмэгдлээ");
+				addToCart(dispatch, data.productByHandle, cartOption);	
+			}
+			else{
+				alert("Үлдэгдэл 0 өөр төрлийг сонгоно уу");
+			}
+				
+		}
+  };
   return (
 	<React.Fragment>
 		<div className='page-content'>
@@ -63,20 +169,20 @@ function Product({match}) {
 									{productData?.variants?.edges[0].node.priceV2.amount} ₮
 								</div>
 								<div className='productOption list'>
-									{color.map((x)=>(
+								{size.map((x)=>(
 										<div className= 'colors'>
 											<label for={x}>{x}</label>
-										<input type="radio" id={x} name="color" value={x}
+										<input type="radio" id={x} value={x} name="size" onChange={handleSizeChange} checked={sizeChecked === x}
 										/>
 										</div>
 										))
 									}
 								</div>
 								<div className='productOption list'>
-								{size.map((x)=>(
+									{color.map((x)=>(
 										<div className= 'colors'>
 											<label for={x}>{x}</label>
-										<input type="radio" id={x} value={x} name="size"
+										<input type="radio" id={x} name="color" value={x} onChange={handleColorChange} checked={colorChecked === x}
 										/>
 										</div>
 										))
@@ -86,14 +192,14 @@ function Product({match}) {
 								{material.map((x)=>(
 										<div className= 'colors'>
 											<label for={x}>{x}</label>
-										<input type="radio" id={x} name="material" value={x}
+										<input type="radio" id={x} name="material" value={x} onChange={handleMaterialChange} checked={materialChecked === x}
 										/>
 										</div>
 										))
 									}
 								</div>
 								<div className="productButtons list">
-									<button className="addToCart">Sagslah</button>
+									<button className="addToCart" onClick={handleAddToCart}>Sagslah</button>
 									<button className="addToSave">Hadgalah</button>
 								</div>
 							</Col>
@@ -106,25 +212,3 @@ function Product({match}) {
 }
 
 export default Product;
-/*
-<Row>
-							<Col sm='8'>
-								<img src={val.images.edges[0].node.originalSrc}
-								height='476px' width='329px'/>
-							</Col>
-							<Col sm='4' className='productForm'>
-								<h1 className='list'>
-									{val.title}
-								</h1>
-								<div className='productPrice list'>
-									{}
-								</div>
-								<div className='productColor list'>
-									Ungu
-								</div>
-								<div className='productSize list'>
-									Hemjee
-								</div>
-							</Col>
-						</Row>
-*/

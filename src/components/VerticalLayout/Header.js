@@ -1,10 +1,11 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './Header.css'
 import { collections } from "../../components/graphql/query";
 import { useQuery } from "@apollo/client";
-
+import CartStateContext from "../../contexts/cart";
 const Header = ({history}) => {
+  const items = useContext(CartStateContext);
   const { error, loading, data } = useQuery(collections);
   const [collectionName, setCollectionName] = useState([]);
   useEffect(() => {
@@ -41,7 +42,7 @@ const Header = ({history}) => {
 		</div>
       </div>
       <div style={{color:'white'}}>
-        <a href="/cart">Cart</a>
+        <a href="/cart">Сагс ({items})</a>
       </div>
     </header>
   );

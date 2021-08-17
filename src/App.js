@@ -13,7 +13,7 @@ import Products from "./pages/Product/index";
 import { authProtectedRoutes, publicRoutes } from './routes/index';
 import AppRoute from "./routes/route";
 import VerticalLayout from './components/VerticalLayout';
-
+import CartProvider from "./contexts/cart";
 const Layout = VerticalLayout;
 
 const shop = "https://tough-one-store.myshopify.com/api/2021-07/graphql.json";
@@ -34,20 +34,22 @@ const client = new ApolloClient({
 function App() {
   return (
     <React.Fragment>
+      <CartProvider>
       <Router>
       <ApolloProvider client={client}>
        {authProtectedRoutes.map((route, idx) => (
-              <AppRoute
-                path={route.path}
-                layout={Layout}
-                component={route.component}
-                key={idx}
-                //isAuthProtected={true}
-                exact
-              />
-            ))}
+       <AppRoute
+        path={route.path}
+        layout={Layout}
+        component={route.component}
+        key={idx}
+        //isAuthProtected={true}
+        exact
+      />
+      ))}
     </ApolloProvider>
       </Router>
+      </CartProvider>
     </React.Fragment>
     
   );

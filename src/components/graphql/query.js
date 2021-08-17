@@ -46,12 +46,14 @@ export const product = gql`
 					}
 				}
 			}
-			variants(first: 1){
+			variants(first: 20){
 				edges {
 					node {
+						title
 						priceV2{
 							amount
 						}
+						quantityAvailable 
 					}
 				}
 			}
