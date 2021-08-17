@@ -1,6 +1,9 @@
-import React, { useContext, useState, useRef } from "react";
+// TO DO
+//  baraanii too shirhgiig songoj boldog boloh
+// cart-g buren hoosruulsnii daraa 2 product bolon cart huudsiig refresh hiihgui l bol baraa cart-nd nemeh uyd omnoh
+// utguud ni orj irj bsniig zasah garaar refresh hiiwel zuger ajillana. code-r refresh hiiwel ajillahgui
+import React, { useContext, useRef } from "react";
 import { useHistory } from "react-router-dom";
-import classNames from "classnames";
 import {
   CartStateContext,
   CartDispatchContext,
@@ -14,7 +17,7 @@ import {
 } from 'reactstrap';
 import './index.css'
 const Cart = () => {
-  const { items, isCartOpen } = useContext(CartStateContext);
+  const { items } = useContext(CartStateContext);
   const dispatch = useContext(CartDispatchContext);
   const history = useHistory();
   const handleRemove = (productId) => {
@@ -25,8 +28,6 @@ const Cart = () => {
     history.push("/checkout");
   };
   var sum = 0;
-  const refs = useRef();
-
   return (
     <React.Fragment>
       <div className="page-content">
@@ -49,13 +50,14 @@ const Cart = () => {
               </div>
               <div className="cart-body">
               {items.map((product,i) => {
-                var too = 2;
+                //var too = 2;
                 sum += parseInt(product.cartVariant===null? product.cartValue.variants.edges[0].node.priceV2.amount
                 :product.cartVariant.price);
           return (
             <div className="cart-item" key={product.cartValue.title}>
               <div className="img">
-                <img className="product-image" src={product.cartValue.images?.edges[0].node.originalSrc} height="119px"width="82px"/>
+                <img className="product-image" alt={product.cartValue.title}
+                src={product.cartValue.images?.edges[0].node.originalSrc} height="119px"width="82px"/>
               </div>
               <div className="detail">
                 <div className="title">

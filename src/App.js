@@ -6,10 +6,8 @@ import {
   HttpLink,
   from,
 } from "@apollo/client";
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { onError } from "@apollo/client/link/error";
-import Products from "./pages/Product/index";
 import { authProtectedRoutes, publicRoutes } from './routes/index';
 import AppRoute from "./routes/route";
 import VerticalLayout from './components/VerticalLayout';

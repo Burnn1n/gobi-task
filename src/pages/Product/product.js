@@ -7,11 +7,10 @@ import {
   Row,
 } from 'reactstrap';
 import './product.css'
-import { valueToObjectRepresentation } from "@apollo/client/utilities";
 import { CartDispatchContext, addToCart } from "../../contexts/cart";
 function Product({match}) {
 	const handle = match.params.handle;
-  const { error, loading, data } = useQuery(product,{
+  const { data } = useQuery(product,{
 		variables : {handle}
 	});
 	const [colorChecked, setColorChecked] = useState("");
@@ -31,11 +30,11 @@ function Product({match}) {
 	useEffect(() => {
 				console.log('frea',productData);
 				productData.options?.map((val) => {
-					if(val.name == "Size")
+					if(val.name === "Size")
 						setSize(val.values);
-					else if(val.name == "Color")
+					else if(val.name === "Color")
 						setColor(val.values);
-					else if(val.name == "Material")
+					else if(val.name === "Material")
 						setMaterial(val.values);
 				})
 				setVariants(productData.variants?.edges);
