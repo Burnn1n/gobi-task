@@ -41,6 +41,7 @@ select{
 	margin-top: 8px;
 }
 .checkout-btn{
+	font-size: 12px;
 	font-weight: 400;
 	justify-content: center;
 	padding: 12px 10px;
