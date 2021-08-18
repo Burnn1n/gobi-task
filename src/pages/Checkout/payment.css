@@ -24,3 +24,6 @@
     margin-right: 16px;
     width: 36px;
 }
+.active{
+  border: 1px solid #4f5255;
+}
