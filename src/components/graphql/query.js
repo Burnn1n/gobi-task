@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const productAll = gql`
 {
-	products(first:5) {
+	products(first:10) {
 		edges {
 			node {
 				id
