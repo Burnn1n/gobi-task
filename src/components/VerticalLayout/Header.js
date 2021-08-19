@@ -181,7 +181,7 @@ const Header = ({history}) => {
       </div>
       <div className="auth">
         <span onClick={()=> setModal_login(true)} style={{cursor:'pointer'}}>
-          {localStorage.userToken.length !== 0? "Миний хаяг" : "Нэвтрэх"}
+          {localStorage.getItem('userToken').length !== 0? "Миний хаяг" : "Нэвтрэх"}
         </span>
         <a href="/cart">Сагс ({JSON.parse(localStorage.getItem('cartItems')).length })</a>
         <span onClick={()=>{
@@ -190,7 +190,7 @@ const Header = ({history}) => {
           }}
           style={{cursor:"pointer"}}
           >
-          {localStorage.userToken.length !==0? "Гарах" : ""}
+          {localStorage.getItem('userToken').length !==0? "Гарах" : ""}
         </span>
       </div>
       
