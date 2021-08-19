@@ -137,7 +137,7 @@ function Product({match}) {
 			alert("Амжилттай сагсанд нэмэгдлээ");
 			addToCart(dispatch, data.productByHandle, cartOption);
 			console.log("Ywuulah data ",data.productByHandle);
-			
+			window.location.reload();
 		}
 		else{
 			if(cartOption === null){
