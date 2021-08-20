@@ -161,8 +161,21 @@ const Header = ({history}) => {
       </a>
       </div>
       <div className='categories'>
-      <div className="navigation">
-			<ul>
+      {collectionName.length > 0 && collectionName.map((val) => {
+            let link = "/collection/" + val.node.handle;
+        return (
+            <div className="categoriesItems"
+            onClick={() =>
+              window.location.href = link
+            }
+            >
+              {val.node.handle}
+            </div>
+        );
+      	})}
+        {/*
+        <div className="navigation">
+        <ul>
 				<li>
 				Category &#9662;
 					<ul>
@@ -177,7 +190,8 @@ const Header = ({history}) => {
 					</ul>
 				</li> 
 			</ul>
-		</div>
+      </div>
+        */}
       </div>
       <div className="auth">
         <span onClick={()=> setModal_login(true)} style={{cursor:'pointer'}}>
