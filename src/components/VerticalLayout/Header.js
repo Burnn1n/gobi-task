@@ -37,6 +37,10 @@ const Header = ({history}) => {
     phone: '',
     error: '',
   });
+  useEffect(() => {
+    console.log(state.password);
+  }, [state.password]);
+  
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     setState({ ...state, email: e.target.email.value, password: e.target.password.value });
@@ -50,6 +54,7 @@ const Header = ({history}) => {
   };
   //on
   useEffect(() => {
+    console.log("done");
       const getToken = {query: `
       mutation{
         customerCreate(input:{
@@ -83,20 +88,21 @@ const Header = ({history}) => {
           return res.json();
         })
         .then((resData) => {
-          if (resData.data.customerCreate) {
+          if (resData.data.customerCreate.customerUserErrors.length === 0) {
             console.log("amjilttai burtgew");
             window.location.reload();
           }
           else {
             console.log("FAILED");
-            setState({ ...state, error: "Failed" });
+            let error = resData.data.customerCreate.customerUserErrors[0].message;
+            setState({ ...state, error: error });
           }
         })
         .catch((error) => {
           console.log(error);
         });
   }, [state.regEmail, state.password, state.lName, state.fName, state.phone]);
-  //on login
+  //on register
   useEffect(() => {
     if (state.email && state.password) {
       const getToken = {query: `
@@ -175,16 +181,16 @@ const Header = ({history}) => {
       </div>
       <div className="auth">
         <span onClick={()=> setModal_login(true)} style={{cursor:'pointer'}}>
-          {localStorage.getItem('userToken').length !== 0? "Миний хаяг" : "Нэвтрэх"}
+          {localStorage.getItem('userToken')?.length !== 0? "Миний хаяг" : "Нэвтрэх"}
         </span>
-        <a href="/cart">Сагс ({JSON.parse(localStorage.getItem('cartItems')).length })</a>
+        <a href="/cart">Сагс ({JSON.parse(localStorage.getItem('cartItems'))?.length })</a>
         <span onClick={()=>{
           localStorage.setItem('userToken',"");
           window.location.reload();
           }}
           style={{cursor:"pointer"}}
           >
-          {localStorage.getItem('userToken').length !==0? "Гарах" : ""}
+          {localStorage.getItem('userToken')?.length !==0? "Гарах" : ""}
         </span>
       </div>
       
