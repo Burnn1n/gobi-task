@@ -61,7 +61,6 @@ const Payment = () => {
 							</div>
 							<div className="actions">
 								<Link to="/checkout" className="link">Өмнөх алхам руу буцах </Link>
-                  {console.log(items)}
 									<div className="submit-btn">
 									<button
                   type="submit"

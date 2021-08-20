@@ -25,7 +25,9 @@ const Cart = () => {
     return removeFromCart(dispatch, productId);
   };
   const handleProceedCheckout = () => {
-    history.push("/checkout");
+    localStorage.getItem('userToken')?.length !== 0?
+    history.push("/checkout")
+    :alert("Нэвтэрнэ үү");
   };
   var sum = 0;
   return (
@@ -39,7 +41,10 @@ const Cart = () => {
                   <span>({items.length})</span>
                   <span
                   className="product-clear"
-                  onClick={() => clearCart(dispatch)}
+                  onClick={() => {
+                  clearCart(dispatch);
+                  window.location.reload();
+                  }}
                   style={{cursor:'pointer'}}
                   >
                   Сагс хоослох

@@ -49,6 +49,7 @@ export const product = gql`
 			variants(first: 20){
 				edges {
 					node {
+						id
 						title
 						priceV2{
 							amount

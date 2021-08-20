@@ -62,6 +62,7 @@ function Product({match}) {
 		var variantQuantity;
 		var variantPrice;
 		var isVariant = false;
+		var i = 0;
 		if(materialChecked === undefined && sizeChecked === undefined && colorChecked === undefined){
 		}
 		else{
@@ -72,12 +73,13 @@ function Product({match}) {
 					index--;
 				}
 			}
-			variants.map((val)=>{
+			variants.map((val,j)=>{
 				let arr = val.node.title.split(" / ");
 				if(JSON.stringify(valueArr) === JSON.stringify(arr)){
 					isVariant = true;
 					variantQuantity = val.node.quantityAvailable;
 					variantPrice = val.node.priceV2.amount;
+					i = val.node.id;
 				}
 			})
 		}
@@ -91,17 +93,17 @@ function Product({match}) {
 				}
 				//only size
 				else{
-					cartOption = {quantity: variantQuantity,price: variantPrice, size: sizeChecked}
+					cartOption = {quantity: variantQuantity,price: variantPrice, size: sizeChecked, id: i}
 				}
 			}
 			else{
 				//only color
 				if(size === JSON.stringify([])){
-					cartOption = {quantity: variantQuantity,price: variantPrice, color: colorChecked};
+					cartOption = {quantity: variantQuantity,price: variantPrice, color: colorChecked, id: i};
 				}
 				//only color and size
 				else{
-					cartOption = {quantity: variantQuantity,price: variantPrice, size: sizeChecked, color: colorChecked}
+					cartOption = {quantity: variantQuantity,price: variantPrice, size: sizeChecked, color: colorChecked, id: i}
 				}
 			}
 		}
@@ -109,11 +111,11 @@ function Product({match}) {
 			if(JSON.stringify(color) === JSON.stringify([])){
 				// only material
 				if(JSON.stringify(size) === JSON.stringify([])){
-					cartOption = {quantity: variantQuantity,price: variantPrice, material: materialChecked};
+					cartOption = {quantity: variantQuantity,price: variantPrice, material: materialChecked, id: i};
 				}
 				// material size
 				else{
-					cartOption = {quantity: variantQuantity,price: variantPrice, size: sizeChecked, material: materialChecked}
+					cartOption = {quantity: variantQuantity,price: variantPrice, size: sizeChecked, material: materialChecked, id: i}
 				}
 			}
 			else{
@@ -121,12 +123,12 @@ function Product({match}) {
 				if(JSON.stringify(size) === JSON.stringify([])){
 					console.log("too ni ",variants[0].node.quantityAvailable);
 					cartOption = {quantity: variantQuantity,price: variantPrice, 
-						color: colorChecked, material: materialChecked};
+						color: colorChecked, material: materialChecked, id: i};
 				}
 				//material color size
 				else{
 					cartOption = {quantity: variantQuantity,price: variantPrice, 
-						size: sizeChecked, color: colorChecked, material: materialChecked}
+						size: sizeChecked, color: colorChecked, material: materialChecked, id: i}
 				}
 			}
 		}
@@ -143,6 +145,7 @@ function Product({match}) {
 			if(cartOption === null){
 				alert("Амжилттай сагсанд нэмэгдлээ");
 				addToCart(dispatch, data.productByHandle, cartOption);	
+				window.location.reload();
 			}
 			else{
 				alert("Үлдэгдэл 0 өөр төрлийг сонгоно уу");

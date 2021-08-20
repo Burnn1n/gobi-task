@@ -88,13 +88,13 @@ const Header = ({history}) => {
           return res.json();
         })
         .then((resData) => {
-          if (resData.data.customerCreate.customerUserErrors.length === 0) {
+          if (resData.data.customerCreate?.customerUserErrors.length === 0) {
             console.log("amjilttai burtgew");
             window.location.reload();
           }
           else {
             console.log("FAILED");
-            let error = resData.data.customerCreate.customerUserErrors[0].message;
+            let error = resData.data.customerCreate?.customerUserErrors[0].message;
             setState({ ...state, error: error });
           }
         })
