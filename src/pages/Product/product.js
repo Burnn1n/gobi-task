@@ -168,7 +168,11 @@ function Product({match}) {
 									{productData?.title}
 								</h1>
 								<div className='productPrice list'>
-									{productData?.variants?.edges[0].node.priceV2.amount} ₮
+									{
+										new Intl.NumberFormat().format(
+											productData?.variants?.edges[0].node.priceV2.amount
+										)
+									} ₮
 								</div>
 								<div className='productOption list'>
 								{size.map((x)=>(

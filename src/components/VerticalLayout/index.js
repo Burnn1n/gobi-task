@@ -1,6 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React, { Component} from 'react';
 import { withRouter } from 'react-router-dom';
 import './Header.css'
 // Layout Related Components
@@ -12,18 +10,6 @@ class Layout extends Component {
   render() {
     return (
       <React.Fragment>
-        <div id='preloader'>
-          <div id='status'>
-            <div className='spinner-chase'>
-              <div className='chase-dot'></div>
-              <div className='chase-dot'></div>
-              <div className='chase-dot'></div>
-              <div className='chase-dot'></div>
-              <div className='chase-dot'></div>
-              <div className='chase-dot'></div>
-            </div>
-          </div>
-        </div>
         <div id='layout-wrapper'>
           <Header/>
           <div className='main-content' style={{ zIndex: '3000' }}>

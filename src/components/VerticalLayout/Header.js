@@ -3,16 +3,15 @@ import React, { useState, useEffect, useContext } from 'react';
 import './Header.css'
 import { collections } from "../../components/graphql/query";
 import { useQuery } from "@apollo/client";
-import CartStateContext from "../../contexts/cart";
+//import CartStateContext from "../../contexts/cart";
 import {
-  Row,
   Form,
   Col,
   Modal,
 } from 'reactstrap';
 const Header = ({history}) => {
-  const items = useContext(CartStateContext);
-  const { error, loading, data } = useQuery(collections);
+  //const items = useContext(CartStateContext);
+  const { data } = useQuery(collections);
   const [collectionName, setCollectionName] = useState([]);
   useEffect(() => {
     if (data) {
@@ -76,10 +75,10 @@ const Header = ({history}) => {
         }
       }
       `};
-      fetch("https://tough-one-store.myshopify.com/api/2021-07/graphql.json", {
+      fetch(process.env.REACT_APP_GRAPHQL_ENDPOINT, {
         method: 'POST',
         headers: {
-          'X-Shopify-Storefront-Access-Token':"7545a37426037781068f8066f1190342",
+          'X-Shopify-Storefront-Access-Token': process.env.REACT_APP_GRAPHQL_TOKEN,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(getToken),

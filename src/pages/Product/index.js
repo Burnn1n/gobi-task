@@ -41,7 +41,9 @@ function Products({history}) {
               )
             } style={{cursor:'pointer'}}
             >{val.node.title}</div>
-            <div className='product-items-price'>{val.node.variants.edges[0].node.priceV2.amount}</div>
+            <div className='product-items-price'>{new Intl.NumberFormat().format(
+              val.node.variants.edges[0].node.priceV2.amount
+            )}</div>
             </div>
 					</div>
         );

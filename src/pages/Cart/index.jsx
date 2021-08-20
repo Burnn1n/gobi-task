@@ -72,8 +72,12 @@ const Cart = () => {
                   >{product.cartValue.title}</span>
                 </div>
                 <div>
-                  <span>{product.cartVariant===null? product.cartValue.variants.edges[0].node.priceV2.amount
-                  :product.cartVariant.price}₮</span>
+                  <span>{
+                    new Intl.NumberFormat().format(
+                      product.cartVariant===null? product.cartValue.variants.edges[0].node.priceV2.amount
+                      :product.cartVariant.price
+                    )
+                  }₮</span>
                 </div>
                 <div className="option">
                   <span className="item">Хэмжээ:</span>
@@ -119,8 +123,12 @@ const Cart = () => {
               </div>
               <div className="price">
                 
-                <span className="amount">{product.cartVariant===null? product.cartValue.variants.edges[0].node.priceV2.amount
-                  :product.cartVariant.price}₮</span>
+                <span className="amount">{
+                  new Intl.NumberFormat().format(
+                    product.cartVariant===null? product.cartValue.variants.edges[0].node.priceV2.amount
+                  :product.cartVariant.price
+                  )
+                }₮</span>
               </div>
             </div>
             );

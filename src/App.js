@@ -4,26 +4,27 @@ import {
   InMemoryCache,
   ApolloProvider,
   HttpLink,
-  from,
 } from "@apollo/client";
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { authProtectedRoutes, publicRoutes } from './routes/index';
+import { BrowserRouter as Router} from 'react-router-dom';
+import { authProtectedRoutes} from './routes/index';
 import AppRoute from "./routes/route";
 import VerticalLayout from './components/VerticalLayout';
 import CartProvider from "./contexts/cart";
 const Layout = VerticalLayout;
 
-const shop = "https://tough-one-store.myshopify.com/api/2021-07/graphql.json";
-const token = "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";
-const token1 = "7545a37426037781068f8066f1190342";
+const shop = process.env.REACT_APP_GRAPHQL_ENDPOINT;
+
 
 const httpLink = new HttpLink({
   uri: shop,
   headers: {
-    'X-Shopify-Storefront-Access-Token': token1
+    'X-Shopify-Storefront-Access-Token': process.env.REACT_APP_GRAPHQL_TOKEN
   }
 });
+console.log("token bol ",process.env.REACT_APP_GRAPHQL_TOKEN);
+console.log("SHOP BOL  ",process.env.REACT_APP_GRAPHQL_ENDPOINT);
+
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: httpLink,
