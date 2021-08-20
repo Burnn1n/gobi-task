@@ -37,10 +37,6 @@ const Header = ({history}) => {
     phone: '',
     error: '',
   });
-  useEffect(() => {
-    console.log(state.password);
-  }, [state.password]);
-  
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     setState({ ...state, email: e.target.email.value, password: e.target.password.value });
@@ -54,7 +50,6 @@ const Header = ({history}) => {
   };
   //on
   useEffect(() => {
-    console.log("done");
       const getToken = {query: `
       mutation{
         customerCreate(input:{
@@ -88,21 +83,20 @@ const Header = ({history}) => {
           return res.json();
         })
         .then((resData) => {
-          if (resData.data.customerCreate.customerUserErrors.length === 0) {
+          if (resData.data.customerCreate) {
             console.log("amjilttai burtgew");
             window.location.reload();
           }
           else {
             console.log("FAILED");
-            let error = resData.data.customerCreate.customerUserErrors[0].message;
-            setState({ ...state, error: error });
+            setState({ ...state, error: "Failed" });
           }
         })
         .catch((error) => {
           console.log(error);
         });
   }, [state.regEmail, state.password, state.lName, state.fName, state.phone]);
-  //on register
+  //on login
   useEffect(() => {
     if (state.email && state.password) {
       const getToken = {query: `
