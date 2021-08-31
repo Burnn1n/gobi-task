@@ -1,6 +1,10 @@
 .page-content{
 	.section_1_desktop{
 		padding-left:84.96px;
+		.row{
+			margin-right: -0;
+			margin-left: -0;
+		}
 		#col1{
 			float: right;
 			display: flex;
@@ -22,7 +26,7 @@
 		}
 		.text{
 			margin-top: 19px;
-			font-family: "Roboto";
+			//font-family: "Roboto";
 			font-style: normal;
 			font-weight: normal;
 			font-size: 22px;
@@ -85,7 +89,7 @@
 			padding-left:29.48px;
 			padding-right:29.48px;
 			margin-top: 19px;
-			font-family: "Roboto";
+			//font-family: "Roboto";
 			font-style: normal;
 			font-weight: normal;
 			font-size: 18px;
@@ -131,6 +135,83 @@
 			}
 		}
 		
+	}
+	.section_2{
+		display: flex;
+    flex-wrap: wrap;
+		padding-top: 60px;
+		padding-bottom: 57px;
+		padding-left: 19.2px;
+		
+		.women-collec1{
+			img{
+				//height: 700px;
+			//	width: 458px;
+			}
+		}
+		.women-collec3{
+		//	height: 700px;
+		//		width: 458px;
+		}
+		//460 702
+		.women-collec2{
+		//	height: 700px;
+		//	width: 458px;
+			text-align: center;
+			padding-top: 20px;
+			padding-left: 6px;
+			padding-right: 6px;
+			.collec-col{
+				font-family: Lato;
+				font-weight: 900;
+				font-size: 50px;
+				line-height: 60px;
+				color: #000000;
+			}
+			img{
+				padding-top: 32px;
+			}
+			.collec-name{
+				margin-left: -100px;
+			margin-top: 51%;
+			}
+			.arrow-link{
+				margin-left: 260px;
+				margin-top: 49%;
+			}
+		}
+		.collec-name{
+			position: absolute;
+			margin-left: 20px;
+			margin-top: 44%;
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 30px;
+			line-height: 35px;
+			text-transform: uppercase;
+			color: #FFFFFF;
+		}
+		.arrow-link{
+			cursor: pointer;
+			position: absolute;
+			margin-left: 380px;
+			margin-top: 44%;
+			color: #FFFFFF;
+		}
+	}
+	.section_3{
+		text-align: center;
+		margin-bottom: 42px;
+		span{
+			font-family: Lato;
+			font-style: normal;
+			font-weight: 800;
+			font-size: 36px;
+			line-height: 48px;
+			text-transform: uppercase;
+			color: #4F5255;
+		}
 	}
 	.container{
 		margin-left: 0;
