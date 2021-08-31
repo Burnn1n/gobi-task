@@ -9,15 +9,6 @@ const AppRoute = ({ component: Component, layout: Layout, /*isAuthProtected,*/ .
   <Route
     {...rest}
     render={props => {
-			/*
-      if (isAuthProtected && !localStorage.getItem("authUser")) {
-        return (
-          <Redirect
-            to={{ pathname: "/login", state: { from: props.location } }}
-          />
-        )
-      }
-			*/
       return (
         <Layout>
           <Component {...props} />
@@ -28,9 +19,6 @@ const AppRoute = ({ component: Component, layout: Layout, /*isAuthProtected,*/ .
 		
   />
 )
-
-
-
 AppRoute.propTypes = {
   isAuthProtected: PropTypes.bool,
   component: PropTypes.any,

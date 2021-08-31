@@ -1,0 +1,541 @@
+
+$detail-text-size1 : 90px;
+$detail-text-size2 : 82px;
+$detail-text-size3-1 : 32px;
+$detail-text-size3-2 : 135px;
+$detail-text-size3-3 : 40px;
+$detail-button-width : 190.63px;
+$detail-button-height : 54px;
+$multiplier : 0.6;
+.none{
+	display: none;
+}
+header{
+	z-index: 3001;
+	border-bottom: 1px solid rgba(0,0,0,.08);
+	background-color: #fff;
+	font-family: "Roboto";
+	position: fixed;
+	width: 100%;
+	.header {
+				height: 88px;
+				width: 100%;
+				padding: 0 30.44px 0 42.9px;
+				display: flex;
+				align-items: center;
+				z-index: 2;
+				.left{
+					.desktop-cat{
+						display: flex;
+						.cat-item + .cat-item{
+							padding-left: 40px;
+						}
+						.cat-item{
+							.cat-text{
+								font-size: 13px;
+								font-style: normal;
+								font-weight: 400;
+								line-height: 26px;
+								letter-spacing: 0em;
+								text-align: center;
+							}
+						}
+					}
+					.tablet-mobile-cat{
+						display: none;
+						.menu-and-search+.menu-and-search{
+							padding-left: 22px;
+						}
+					}
+					
+				}
+				.right{
+					
+						align-items: center;
+					.search{
+			
+						height: 44px;
+						width: 260px;
+						border-radius: 8px;
+						background-color: #E5E5E5;;
+						
+						display: flex;
+						align-items: center;
+						::placeholder {
+							width: 42px;
+							height: 24px;
+							font-style: normal;
+							font-weight: normal;
+							font-size: 12px;
+							line-height: 200.69%;
+							letter-spacing: 0.08em;
+							color: #000000;
+						}
+						input{
+							border: none;
+        			margin-left: 16px;
+        			outline: none;
+							width: 217.4px;
+							background: #E5E5E5;;
+							
+						}
+
+						img{
+							cursor: pointer;
+						}
+					}
+					.srch{
+						padding-right: 17px;
+					}
+					.wish-and-cart{
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						width: 44px;
+						height: 44px;
+					}
+				}
+
+			
+			}
+}
+#layout-wrapper{
+	img{
+		cursor: pointer;
+	}
+	svg{
+		cursor: pointer;
+	}
+	.static-header{
+		color: #FFFFFF;
+		font-family: "Roboto";
+	}
+		.detail-banner{
+			color: #FFFFFF;
+			display: flex;
+			align-items: center;
+			padding-left: 42.8px;
+			padding-right: 37.32px;
+			height: 40.02px;
+			background-color: #3A416F;
+			.left{
+				width: 33%;
+				
+			}
+			.middle{
+				width: 33%;
+				
+			}
+			.right{
+				width: 33%;
+				
+			}
+			span + span{
+				padding-left: 10px;
+			}
+			.detail-left-items + .detail-left-items{
+				padding-left: 17px;
+			}
+				.detail-texts{
+					font-style: normal;
+					font-weight: normal;
+					font-size: 12px;
+					line-height: 14px;
+				}
+				.link{
+					text-decoration-line: underline;
+					cursor: pointer;
+				}
+				.button{
+					cursor: pointer;
+				}
+		}
+		.left{
+			width: 40%;
+			float: left;
+			display: flex;
+			
+		}
+		.middle{
+			width: 20%;
+			margin: 0 auto;
+			align-items: center;
+				text-align: center;
+				vertical-align: middle;
+		}
+		.right{
+			display: flex;
+			justify-content: flex-end;
+			width: 40%;
+			float: right;
+			margin-left: auto;
+			text-align: right;
+		}
+		.header-menu{
+			background: url("../../assets/images/header/header_img.png");
+			height: 824px;
+			max-width: 1440px;
+			.header {
+				height: 88px;
+				width: 100%;
+				padding: 0 30.44px 0 42.9px;
+				display: flex;
+				align-items: center;
+				.left{
+					.desktop-cat{
+						display: flex;
+						.cat-item + .cat-item{
+							padding-left: 40px;
+						}
+						.cat-item{
+							.cat-text{
+								font-size: 13px;
+								font-style: normal;
+								font-weight: 400;
+								line-height: 26px;
+								letter-spacing: 0em;
+								text-align: center;
+							}
+						}
+					}
+					.tablet-mobile-cat{
+						display: none;
+						.menu-and-search+.menu-and-search{
+							padding-left: 22px;
+						}
+					}
+					
+				}
+				.right{
+					
+						align-items: center;
+					.search{
+			
+						height: 44px;
+						width: 260px;
+						border-radius: 8px;
+						background-color: #FFFFFF;
+						
+						display: flex;
+						align-items: center;
+						::placeholder {
+							width: 42px;
+							height: 24px;
+							font-style: normal;
+							font-weight: normal;
+							font-size: 12px;
+							line-height: 200.69%;
+							letter-spacing: 0.08em;
+							color: #000000;
+						}
+						input{
+							border: none;
+        			margin-left: 16px;
+        			outline: none;
+							width: 217.4px;
+							
+						}
+
+						img{
+							cursor: pointer;
+						}
+					}
+					.srch{
+						padding-right: 17px;
+					}
+					.wish-and-cart{
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						width: 44px;
+						height: 44px;
+					}
+				}
+
+			
+			}
+			.detail{
+				margin-top: 120.6px;
+				margin-left: 710px;
+					align-items: center;
+				text-align: center;
+				vertical-align: middle;
+
+				.summer{
+					font-family: Lato;
+					font-style: normal;
+					font-weight: bold;
+					font-size: $detail-text-size1;
+					text-align: center;
+					text-transform: uppercase;
+					color: #FFFFFF;
+					text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.09);
+				}
+				.sale{
+					font-family: "Mr Dafoe";
+					font-size: $detail-text-size2;
+					line-height: 84.4%;
+					text-align: center;
+					color: #E85757;
+					transform: rotate(-8.99deg);
+				}
+				.saleStyle{ 
+					margin: 0 auto;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					#span1{
+						align-items: center;
+						font-family: Lato;
+						font-style: normal;
+						font-weight: bold;
+						font-size: $detail-text-size3-1;
+						text-align: center;
+						text-transform: uppercase;
+						text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.09);
+					}
+					#span1 + #span2{
+						padding-left: 18.31px;
+					}
+					#span2{
+						font-family: Lato;
+						font-weight: bold;
+						font-size: $detail-text-size3-2;
+						line-height: 162px;
+						text-transform: uppercase;
+						#span2_1{
+							font-size: 80px;
+						}
+					}
+					#span3{
+						padding-top: 55px;
+						font-family: Lato;
+						font-weight: bold;
+						font-size: $detail-text-size3-3;
+						line-height: 48px;
+						text-align: center;
+						text-transform: uppercase;
+					}
+				}
+				.shopNow{
+					button{
+						width: $detail-button-width;
+						height: $detail-button-height;
+						left: 964px;
+						top: 638px;
+						background: #FFFFFF;
+						border-radius: 10px;
+						span{
+							font-style: normal;
+							font-weight: 500;
+							font-size: 18px;
+							line-height: 138.19%;
+							text-transform: uppercase;
+							color: #000000;
+
+						}
+					}
+				}
+			}
+		}
+	.main-content{
+		margin-top: 81.41px;
+	}
+	.page-content{
+		background-color: #FFFFFF;
+	}
+	
+}
+//ipad pro
+@media only screen and(max-width : 1024px) {
+	#layout-wrapper{
+			.detail{
+				.sale{
+					font-size: $detail-text-size2 * $multiplier !important;
+				}
+				.summer{
+					font-size: $detail-text-size1 * $multiplier !important;
+				}
+				
+				.saleStyle{
+					padding-top: 35px !important;
+					#span1{
+						font-size: $detail-text-size3-1 * $multiplier !important;
+					}
+					#span2{
+						font-size: $detail-text-size3-2 * $multiplier !important;
+					}
+					#span3{
+						font-size: $detail-text-size3-3 * $multiplier !important;
+					}
+				}
+				.shopNow{
+					padding-top: 50px !important;
+					button{
+						width: $detail-button-width * 0.9 !important;
+						height: $detail-button-height * 0.9 !important;
+					}
+				}
+			}
+		
+	}
+}
+//ipad
+@media only screen and(max-width : 992px) {
+	#layout-wrapper{
+		header{
+			.header{
+				height: 50px;
+				padding: 0 14.02px 0 11.98px;
+				.left{
+					.desktop-cat{
+						display: none;
+					}
+					.tablet-mobile-cat{
+						display: flex;
+					}
+				}
+				.middle{
+					.img1{
+						width: 66.77px;
+						height: 32.23px;
+					}
+				}
+				.right{
+					.srch{
+						display: none;
+					}
+				}
+			}
+		}
+			.detail-banner{
+				padding-left: 11.98px;
+				padding-right: 18.01px;
+				.middle{
+					display: none;
+				}
+				.left{
+					width: 50%;
+				}
+				.right{
+					width: 50%;
+				}
+			}
+			.header-menu{
+				background: url("../../assets/images/header/header_img_tablet.png");
+				height: 439.96px;
+				.header{
+					height: 50px;
+					padding: 0 14.02px 0 11.98px;
+					.left{
+						.desktop-cat{
+							display: none;
+						}
+						.tablet-mobile-cat{
+							display: flex;
+						}
+					}
+					.middle{
+						.img1{
+							width: 66.77px;
+							height: 32.23px;
+						}
+					}
+					.right{
+						.srch{
+							display: none;
+						}
+					}
+				}
+			}
+			.detail{
+				margin-top: 50px !important;
+				margin-left: 350px !important;
+					.sale{
+						font-size: 52px !important;
+					}
+					.summer{
+						font-size: 50px !important;
+					}
+					
+					.saleStyle{
+						max-height: 120px;
+						padding-top: 0 !important;
+						#span1{
+							font-size: 18px !important;
+						}
+						#span2{
+							font-size: 75px !important;
+							#span2_1{
+								font-size: 44.4px !important;
+							}
+						}
+						#span3{
+							padding-top: 30px !important;
+							font-size: 24px !important;
+						}
+					}
+					.shopNow{
+						padding-top: 0 !important;
+						button{
+							width: 145px !important;
+							height: 42.69px !important;
+						}
+					}
+				
+			}
+	}
+}
+//plus big screen phones
+@media only screen and(max-width : 767px) {
+	#layout-wrapper{
+			.detail-banner{
+				padding-right: 13.01px;
+			}
+			.header-menu{
+				background: url("../../assets/images/header/header_img_plus.png");
+				height: 754px;
+				.detail{
+					position: absolute;
+					margin-top: 602px !important;
+					margin-left: 11.99px !important;
+					width: 94%;
+					color: #000000 !important;
+					background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(238, 243, 255, 0.8) 100%);
+					backdrop-filter: blur(50px);
+					border-radius: 9px;
+					.summer{
+						color: #181818;
+						padding-top:43.64px !important;
+					}
+					.shopNow{
+						padding-bottom: 50.85px !important;
+						button{
+							width: 167px !important;
+							height: 49px !important;
+							background: #272727;
+							span{
+								color: #FFFFFF;
+							}
+						}
+					}
+				}
+			}
+		.main-content{
+			margin-top: 300px;
+		}
+	}
+}
+//iphone x regular
+@media only screen and(max-width : 376px) {
+	#layout-wrapper{
+			.detail-banner{
+				padding-right: 13.01px;
+			}
+			.header-menu{
+				background: url("../../assets/images/header/header_img_phone.png");
+				height: 754px;
+			}
+		
+	}
+}

@@ -1,0 +1,61 @@
+.page-content{
+	.section_1{
+		padding-left:84.96px;
+		#col1{
+			float: right;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+		}
+		#col2{
+			float: left;
+		}
+		.title{
+			font-family: "Lato";
+			font-style: normal;
+			font-weight: bold;
+			font-size: 40px;
+			line-height: 132%;
+			text-transform: uppercase;
+			color: #000000;
+		}
+		.text{
+			margin-top: 19px;
+			font-family: "Roboto";
+			font-style: normal;
+			font-weight: normal;
+			font-size: 22px;
+			line-height: 138.19%;
+			color: #636363;
+		}
+		.shopNow{
+			margin-top: 45.99px;
+			button{
+				border-radius: 10px;
+				width: 181.56px !important;
+				height: 56px !important;
+				background: #272727;
+				span{
+					font-family: Roboto;
+					font-style: normal;
+					font-weight: 500;
+					font-size: 18px;
+					line-height: 138.19%;
+					text-transform: uppercase;
+					color: #FFFFFF;
+				}
+			}
+		}
+		#img1{
+			margin-right: 6px;
+		}
+		#img2{
+			margin-bottom: 5.84px;
+		}
+	}
+	.container{
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
