@@ -200,27 +200,139 @@ function Home({history}) {
 			<div className="section_4">
 				<div className="section_4_items">
 					<img src={img8} alt="" />
+					<div className="section_4_item_detail_text">
+					Zweiseitiger Wendemantel Mit Schmetterlingsxzds
+					</div>
+					<div className="section_4_item_detail_color">
+						+6 colors
+					</div>
+					<div className="section_4_item_detail_price">
+						<span className="default">
+							$ 299.00
+						</span>
+						<span className="saled">
+							$ 79.00
+						</span>
+					</div>
 				</div>
 				<div className="section_4_items">
 					<img src={img9} alt="" />
+					<div className="section_4_item_detail_text">
+					Zweiseitiger Wendemantel Mit Schmetterlingsxzds
+					</div>
+					<div className="section_4_item_detail_color">
+						+6 colors
+					</div>
+					<div className="section_4_item_detail_price">
+						<span className="default">
+							$ 299.00
+						</span>
+						<span className="saled">
+							$ 79.00
+						</span>
+					</div>
 				</div>
 				<div className="section_4_items">
 					<img src={img10} alt="" />
+					<div className="section_4_item_detail_text">
+					Zweiseitiger Wendemantel Mit Schmetterlingsxzds
+					</div>
+					<div className="section_4_item_detail_color">
+						+6 colors
+					</div>
+					<div className="section_4_item_detail_price">
+						<span className="default">
+							$ 299.00
+						</span>
+						<span className="saled">
+							$ 79.00
+						</span>
+					</div>
 				</div>
 				<div className="section_4_items">
 					<img src={img11} alt="" />
+					<div className="section_4_item_detail_text">
+					Zweiseitiger Wendemantel Mit Schmetterlingsxzds
+					</div>
+					<div className="section_4_item_detail_color">
+						+6 colors
+					</div>
+					<div className="section_4_item_detail_price">
+						<span className="default">
+							$ 299.00
+						</span>
+						<span className="saled">
+							$ 79.00
+						</span>
+					</div>
 				</div>
 				<div className="section_4_items">
 					<img src={img12} alt="" />
+					<div className="section_4_item_detail_text">
+					Zweiseitiger Wendemantel Mit Schmetterlingsxzds
+					</div>
+					<div className="section_4_item_detail_color">
+						+6 colors
+					</div>
+					<div className="section_4_item_detail_price">
+						<span className="default">
+							$ 299.00
+						</span>
+						<span className="saled">
+							$ 79.00
+						</span>
+					</div>
 				</div>
 				<div className="section_4_items">
 					<img src={img13} alt="" />
+					<div className="section_4_item_detail_text">
+					Zweiseitiger Wendemantel Mit Schmetterlingsxzds
+					</div>
+					<div className="section_4_item_detail_color">
+						+6 colors
+					</div>
+					<div className="section_4_item_detail_price">
+						<span className="default">
+							$ 299.00
+						</span>
+						<span className="saled">
+							$ 79.00
+						</span>
+					</div>
 				</div>
 				<div className="section_4_items">
 					<img src={img14} alt="" />
+					<div className="section_4_item_detail_text">
+					Zweiseitiger Wendemantel Mit Schmetterlingsxzds
+					</div>
+					<div className="section_4_item_detail_color">
+						+6 colors
+					</div>
+					<div className="section_4_item_detail_price">
+						<span className="default">
+							$ 299.00
+						</span>
+						<span className="saled">
+							$ 79.00
+						</span>
+					</div>
 				</div>
 				<div className="section_4_items">
 					<img src={img15} alt="" />
+					<div className="section_4_item_detail_text">
+					Zweiseitiger Wendemantel Mit Schmetterlingsxzds
+					</div>
+					<div className="section_4_item_detail_color">
+						+6 colors
+					</div>
+					<div className="section_4_item_detail_price">
+						<span className="default">
+							$ 299.00
+						</span>
+						<span className="saled">
+							$ 79.00
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>

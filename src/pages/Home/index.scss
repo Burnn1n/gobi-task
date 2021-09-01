@@ -274,6 +274,43 @@
 			margin-bottom: 33.02px;
 			margin-right: 5px;
 			margin-left: 5px;
+
+			font-family: Lato;
+			font-style: normal;
+			font-weight: normal;
+			.section_4_item_detail_text{
+				overflow-wrap: break-word;
+				word-wrap: break-word;
+				hyphens: auto;
+				max-width: 216px;
+				font-size: 12px;
+				letter-spacing: 1px;
+				color: #212121;
+			}
+			.section_4_item_detail_color{
+				font-size: 11px;
+				line-height: 14px;
+				letter-spacing: 1px;
+				color: #212121;
+			}
+			.section_4_item_detail_price{
+				.default{
+					font-size: 11px;
+					line-height: 14px;
+					letter-spacing: 1px;
+					text-decoration-line: line-through;
+					color: #212121;
+				}
+				.saled{
+					font-size: 11px;
+					line-height: 14px;
+					letter-spacing: 1px;
+					color: #B00020;
+				}
+				.default + .saled{
+					margin-left: 8px;
+				}
+			}
 		}
 	}
 	.container{
