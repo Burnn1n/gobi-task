@@ -335,6 +335,27 @@ function Home({history}) {
 					</div>
 				</div>
 			</div>
+			<div className="section_end">
+				<div className="section_end_title">
+					Subscribe
+				</div>
+				<div className="section_end_title_1">
+					Sign up for emails and receive early access to new arrivals, sales, events + more.
+				</div>
+				<div className="section_end_input">
+					<input type="text"placeholder="Enter your email address" />
+					<button>
+						<span>
+							submit
+						</span>
+					</button>
+				</div>
+				<div className="section_end_agreement">
+				By signing up, you will receive Gobi Cashmere offers,
+				 promotions and other commercial messages. You 
+				are also agreeing to Gobi Cashmere's Privacy Policy. You may unsubscribe at any time.
+				</div>
+			</div>
 		</div>
 	</React.Fragment>
   );
