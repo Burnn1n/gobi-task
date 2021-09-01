@@ -570,6 +570,32 @@
 				}
 			}
 		}
+		.section_end{
+			.section_end_title_1{
+				padding-left: 63.5px;
+				padding-right: 63.5px;
+			}
+			.section_end_input{
+				width: 306px;
+				input{
+					::placeholder{
+						font-family: Lato;
+						font-style: normal;
+						font-weight: normal;
+						font-size: 9px;
+						letter-spacing: 1px;
+					}
+					width: 188px;
+				}
+				button{
+					width: 118px;
+				}
+			}
+			.section_end_agreement{
+				font-size: 9px;
+				width: 284px;
+			}
+		}
 	}
 }
 //for iphone 5
