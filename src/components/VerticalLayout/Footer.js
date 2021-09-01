@@ -142,7 +142,12 @@ const Footer = ({history}) => {
 				</div>
 		</div>
 		<div className="footer-mobile">
-			
+			<div>f</div>
+			<div>f</div>
+			<div>f</div>
+			<div>f</div>
+			<div>f</div>
+			<div>f</div>
 		</div>
     </React.Fragment>
   );
