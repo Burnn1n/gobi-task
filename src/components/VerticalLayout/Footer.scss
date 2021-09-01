@@ -65,5 +65,24 @@
 		font-size: 12px;
 		color: #575F61;
 	}
-	
+}
+@media only screen and(max-width : 768px) {
+	.footer-desktop{
+		.containing{
+			width: 768px;
+			background: linear-gradient(0deg, #F5F7F6, #F5F7F6), #FFFFFF;
+			padding-top: 0;
+		}
+		.followUs{
+			display: none;
+		}
+	}
+}
+@media only screen and(max-width : 414px) {
+	.footer-desktop{
+		display: none;
+	}
+	.footer-mobile{
+		display: block;
+	}
 }

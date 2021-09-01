@@ -141,6 +141,9 @@ const Footer = ({history}) => {
 				All content Copyright © 2020 GOBI Cashmere
 				</div>
 		</div>
+		<div className="footer-mobile">
+			
+		</div>
     </React.Fragment>
   );
 };
