@@ -141,7 +141,7 @@
     flex-wrap: wrap;
 		padding-top: 60px;
 		padding-bottom: 57px;
-		padding-left: 19.2px;
+		justify-content: center;
 		
 		.women-collec1{
 			img{
@@ -176,8 +176,9 @@
 			margin-top: 51%;
 			}
 			.arrow-link{
+				padding-top: 0;
 				margin-left: 260px;
-				margin-top: 49%;
+				margin-top: 51%;
 			}
 		}
 		.collec-name{
@@ -200,6 +201,54 @@
 			color: #FFFFFF;
 		}
 	}
+	.section_2_mobile{
+		display: none;
+		margin-bottom: 15px;
+		.collec-col{
+			text-align: center;
+			font-family: Lato;
+			font-weight: bold;
+			font-size: 22px;
+			letter-spacing: 0.09em;
+			text-transform: uppercase;
+			color: #414141;
+			text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.09);
+			margin-bottom: 15px;
+		}
+		.collec-content{
+			display: flex;
+    	flex-wrap: wrap;
+			justify-content: center;
+			.collec-img{
+				width: 184.48px;
+				height: 281.8px;
+			}
+			.collec-div{
+				margin-right: 6.04px;
+			}
+			.collec-name{
+				position: absolute;
+				font-family: Roboto;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 14px;
+				line-height: 16px;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: #FFFFFF;
+				text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.09);
+				margin-left: 10px;
+				margin-top: 257px;
+			}
+			.arrow-link{
+				cursor: pointer;
+			position: absolute;
+			margin-left: 155px;
+			margin-top: 257px;
+			color: #FFFFFF;
+			}
+		}
+	}
 	.section_3{
 		text-align: center;
 		margin-bottom: 42px;
@@ -213,12 +262,36 @@
 			color: #4F5255;
 		}
 	}
+	.section_4{
+		display: flex;
+    flex-wrap: wrap;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		padding-left: 220px;
+		padding-right:220px;
+		.section_4_items{
+			margin-bottom: 33.02px;
+			margin-right: 5px;
+			margin-left: 5px;
+		}
+	}
 	.container{
 		margin-left: 0;
 		margin-right: 0;
 	}
 }
 
+@media only screen and(max-width : 1366px) {
+	.page-content{
+		.section_2{
+			.collec-img{
+				width: 440.87px ;
+				height: 670.05px ;
+			}
+		}
+	}
+}
 @media only screen and(max-width : 1024px) {
 	.page-content{
 		.section_1_desktop{
@@ -254,12 +327,42 @@
 				}
 			}
 		}
+		.section_2{
+				.collec-img{
+					width: 290.87px;
+					height: 420.05px;
+				}
+				.women-collec2{
+					.collec-name{
+						margin-left: -20px;
+						margin-top: 42%;
+					}
+					.arrow-link{
+						margin-left: 190px;
+						margin-top: 42%;
+					}
+				}
+				.collec-name{
+					margin-left: 20px;
+					margin-top: 37%;
+					font-size: 22px;
+				}
+				.arrow-link{
+					margin-left: 230px;
+					margin-top: 37%;
+				}
+		}
+		.section_4{
+			padding-left: 0;
+			padding-right:0;
+		}
 	}
 }
 
 @media only screen and(max-width : 992px) {
 	.page-content{
 		.section_1_desktop{
+			padding-left:32.37px;
 			#img1{
 				img{
 					width: 244.92px !important;
@@ -292,6 +395,42 @@
 				}
 			}
 		}
+		.section_2{
+			.collec-img{
+				width: 244.87px;
+				height: 374.05px;
+			}
+			.women-collec2{
+				.collec-name{
+					margin-left: -9px;
+					margin-top: 51%;
+				}
+				.arrow-link{
+					margin-left: 169px;
+					margin-top: 51%;
+				}
+			}
+			.collec-name{
+				margin-left: 14px;
+				margin-top: 43%;
+				font-size: 22px;
+			}
+			.arrow-link{
+				margin-left: 190px;
+				margin-top: 43%;
+			}
+	}
+		.section_4{
+			.section_4_items{
+				margin-bottom: 27.74px;
+				margin-right: 4px;
+				margin-left: 4px;
+				img{
+					width: 170.87px;
+					height: 280.84px;
+				}
+			}
+		}
 	}
 }
 @media only screen and(max-width : 414px) {
@@ -301,6 +440,87 @@
 		}
 		.section_1_phone{
 			display: block;
+		}
+		.section_2{
+			display: none;
+		}
+		.section_2_mobile{
+			display: block;
+		}
+		.section_3{
+			margin-bottom: 0;
+			span{
+				font-weight: 500;
+				font-size: 22px;
+				letter-spacing: 0.055em;
+				text-transform: uppercase;
+				color: #000000;
+			}
+		}
+		.section_4{
+			.section_4_items{
+				margin-bottom: 27.5px;
+				margin-right: 3.3px;
+				margin-left: 3.3px;
+				img{
+					width: 162.87px;
+					height: 270.84px;
+				}
+			}
+		}
+	}
+}
+//for iphone 5
+@media only screen and(max-width : 320px) {
+	.page-content{
+		.section_1_phone{
+			#img1{
+				img{
+					height: 240.51px;
+					width: 190.4px;
+				}
+			}
+			#img2{
+				img{
+					width: 101.02px;
+					height: 120.16px;
+				}
+			}
+			#img3{
+				img{
+					width: 101.02px;
+					height: 117.38px;
+				}
+			}
+		}
+
+		.section_2_mobile{
+			.collec-content{
+				.collec-img{
+					width: 156.8px;
+					height: 265.8px;
+				}
+				.collec-name{
+					margin-left: 10px;
+					margin-top: 245px;
+				}
+				.arrow-link{
+					margin-left: 134px;
+					margin-top: 245px;
+				}
+			}
+		}
+
+		.section_4{
+			.section_4_items{
+				margin-bottom: 27.5px;
+				margin-right: 3.3px;
+				margin-left: 3.3px;
+				img{
+					width: 140.87px;
+					height: 250.84px;
+				}
+			}
 		}
 	}
 }
